@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💝 Sorpresa del 3° Dicembre 💝</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f8e1e7 0%, #fce4ec 50%, #f3e5f5 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Snowflakes and hearts animation */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: white;
+            font-size: 1em;
+            opacity: 0.8;
+            animation: fall linear infinite;
+            user-select: none;
+        }
+
+        .floating-heart {
+            position: absolute;
+            top: -10px;
+            font-size: 1em;
+            opacity: 0.6;
+            animation: fall linear infinite;
+            user-select: none;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 30px;
+            padding: 50px 40px;
+            max-width: 620px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(219, 112, 147, 0.25);
+            text-align: center;
+            position: relative;
+            animation: fadeInScale 1s ease-out;
+            border: 3px solid #f4a5b8;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .emoji-row {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        h1 {
+            color: #d4738c;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .date {
+            color: #b8697d;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .special-badge {
+            background: linear-gradient(135deg, #f4a5b8 0%, #e991a8 100%);
+            color: white;
+            padding: 12px 35px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin: 20px 0;
+            box-shadow: 0 8px 20px rgba(244, 165, 184, 0.4);
+            letter-spacing: 1px;
+        }
+
+        .heart-divider {
+            font-size: 2em;
+            color: #e8a0b5;
+            margin: 25px 0;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.15);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        .message-box {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+            border-radius: 25px;
+            padding: 40px 35px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(219, 112, 147, 0.15);
+            border: 2px solid #f8d0db;
+            position: relative;
+        }
+
+        .message-box::before {
+            content: "💌";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5em;
+        }
+
+        .message-box p {
+            color: #5a4a4f;
+            font-size: 1.5em;
+            line-height: 1.9;
+            font-style: italic;
+        }
+
+        .message-box .signature {
+            margin-top: 25px;
+            font-size: 1.3em;
+            color: #d4738c;
+            font-weight: bold;
+        }
+
+        .sparkle-row {
+            font-size: 1.8em;
+            margin: 20px 0;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        .footer {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 2px dashed #f4c4d4;
+            color: #b8697d;
+            font-size: 1.1em;
+            font-style: italic;
+        }
+
+        /* Decorative elements */
+        .deco-top, .deco-bottom {
+            font-size: 2em;
+            color: #e8a0b5;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 35px 25px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .message-box p {
+                font-size: 1.25em;
+            }
+
+            .special-badge {
+                font-size: 1.1em;
+                padding: 10px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Snowflakes and Hearts -->
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = Math.random() * 3 + 5 + 's';
+            snowflake.style.opacity = Math.random() * 0.4 + 0.3;
+            snowflake.style.fontSize = Math.random() * 0.8 + 0.5 + 'em';
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 8000);
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            const hearts = ['💕', '💗', '💖', '✨'];
+            heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = Math.random() * 4 + 6 + 's';
+            heart.style.opacity = Math.random() * 0.4 + 0.3;
+            heart.style.fontSize = Math.random() * 0.8 + 0.6 + 'em';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        setInterval(createSnowflake, 400);
+        setInterval(createHeart, 600);
+    </script>
+
+    <div class="container">
+        <div class="header">
+            <div class="emoji-row">🎄 🎁 🎅🏼</div>
+            <div class="deco-top">✨ 💕 ✨</div>
+            <h1>Sorpresa del 3° Dicembre</h1>
+            <div class="date">Casella N°3 del Calendario dell'Avvento</div>
+        </div>
+
+        <div class="special-badge">💌 MESSAGGIO SPECIALE 💌</div>
+
+        <div class="heart-divider">♥️</div>
+
+        <div class="message-box">
+            <p>È grazie a te che rido un po' più forte e piango un po' di meno.</p>
+            <p>Sono fortunata ad averti nella mia vita.</p>
+            <p class="signature">Ti voglio bene ❤️✨</p>
+        </div>
+        <div class="deco-bottom">🎄 💗 🎄</div>
+    </div>
+</body>
+</html>
